@@ -14,13 +14,19 @@ https://goerli.etherscan.io/tx/0xec11792b1877fe389d342f96db29f5965ed73531c060ede
 ## 4.VSCode
 ![image3](./vscode截图.png)
 
-## 5.Hardhat部署合约
+## 5.1.Hardhat部署合约
 https://goerli.etherscan.io/address/0x6ffc54c3c3736da7517b6b347e807a5aa692e067
 
-## 5.Truffle部署合约
+## 5.2.Hardhat编写Test case
+```sh
+cd counter-project-hardhat
+npx hardhat test
+```
+
+## 6.1.Truffle部署合约
 https://goerli.etherscan.io/address/0x6ffc54c3c3736da7517b6b347e807a5aa692e067
 
-## 6.编写Test case
+## 6.2.Truffle编写Test case
 ```sh
 cd counter-project-hardhat
 npx hardhat test
