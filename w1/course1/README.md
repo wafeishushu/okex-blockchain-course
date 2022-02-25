@@ -23,11 +23,8 @@ cd counter-project-hardhat
 npx hardhat test
 ```
 
-## 6.1.Truffle部署合约
-https://goerli.etherscan.io/address/0x6ffc54c3c3736da7517b6b347e807a5aa692e067
-
-## 6.2.Truffle编写Test case
+## 5.3.本地写脚本运行合约的函数
 ```sh
 cd counter-project-hardhat
-npx hardhat test
+npx hardhat run script/run.js
 ```
