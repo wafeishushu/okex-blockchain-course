@@ -14,8 +14,8 @@ async function main() {
   console.log("Bank deployed to:", bankContract.address);
 
   // Send transactions
-  let provider = ethers.getDefaultProvider();
-  let gasPrice = await provider.getGasPrice();
+  const provider = ethers.getDefaultProvider();
+  const gasPrice = await provider.getGasPrice();
 
   let ownerBalance = await owner.getBalance();
   console.log("Owner balance: ", ethers.utils.formatEther(ownerBalance))

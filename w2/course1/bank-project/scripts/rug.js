@@ -23,29 +23,10 @@ const main = async () => {
   // Rug
   const bankContractWithSigner = bankContract.connect(owner);
   const tx1 = await bankContractWithSigner.withdraw()
-  console.log("Tx1 hash: ", tx1.hash)
-  await waitTransaction(provider, tx1.hash)
+  await tx1.wait();
 
   console.log("Rug succeed!");
 };
-
-async function waitTransaction(provider, txHash) {
-  let txReceipt = null
-  while (txReceipt == null) { 
-    // Waiting until the transaction is mined
-    txReceipt = await provider.getTransactionReceipt(txHash);
-    await sleep(1000)
-  }
-}
-
-async function sleep(milliseconds) {
-  return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
-
-function prettyJson(json) {
-  return JSON.stringify(json, null, '\t');
-}
-
 
 const runMain = async () => {
   try {

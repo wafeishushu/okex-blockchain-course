@@ -20,33 +20,16 @@ const main = async () => {
   // create Score contract
   const tx1 = await teacherContractWithSigner.createNewScoreContract()
   console.log("Tx1 hash: ", tx1.hash)
-  await waitTransaction(provider, tx1.hash)
+  await tx1.wait()
 
   // set student with score 88
   const tx2 = await teacherContractWithSigner.setScore(owner.address, 88)
   console.log("Tx2 hash: ", tx2.hash)
-  await waitTransaction(provider, tx2.hash)
+  await tx2.wait()
 
   const ownerScore = await teacherContractWithSigner.getScore(owner.address)
   console.log("Owner score: ", ownerScore.toNumber());
 };
-
-async function waitTransaction(provider, txHash) {
-  let txReceipt = null
-  while (txReceipt == null) { 
-    // Waiting expectedBlockTime until the transaction is mined
-    txReceipt = await provider.getTransactionReceipt(txHash);
-    await sleep(1000)
-  }
-}
-
-async function sleep(milliseconds) {
-  return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
-
-function prettyJson(json) {
-  return JSON.stringify(json, null, '\t');
-}
 
 const runMain = async () => {
   try {
