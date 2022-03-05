@@ -11,7 +11,7 @@ contract Bank {
     }
 
     receive() external payable {
-        accountMap[msg.sender] = msg.value;
+        accountMap[msg.sender] += msg.value;
     }
 
     function withdraw() external {

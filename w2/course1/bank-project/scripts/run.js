@@ -29,7 +29,7 @@ async function main() {
   });
   console.log("Sent tx1: " + JSON.stringify(tx1));
 
-  // User1 sends 10 ethers to bank
+  // User1 sends 10 ethers + 20 ethers to bank
   let tx2 = await user1.sendTransaction({
     gasLimit: 300000,
     gasPrice: gasPrice,
@@ -38,7 +38,15 @@ async function main() {
   });
   console.log("Sent tx2: " + JSON.stringify(tx2));
 
-  // Now there are 15 ethers at bank
+  let tx3 = await user1.sendTransaction({
+    gasLimit: 300000,
+    gasPrice: gasPrice,
+    to: bankContract.address,
+    value: ethers.utils.parseEther("20")
+  });
+  console.log("Sent tx3: " + JSON.stringify(tx3));
+
+  // Now there are 35 ethers at bank
   let bankBalance = await bankContract.getBalance()
   console.log("Bank contract balance: ", ethers.utils.formatEther(bankBalance));
 
