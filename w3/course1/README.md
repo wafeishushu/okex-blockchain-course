@@ -21,6 +21,13 @@ MyERC20: https://goerli.etherscan.io/address/0xcC0eD986CC2493D184493cEc1c8Dc715F
 
 Vault: https://goerli.etherscan.io/address/0xCa300840d852d900D4D0Bba29D5B2f8FD3945b73
 
+### 3.1 脚本调用合约转账
+```sh
+npx hardhat run scripts/call.js --network goerli
+```
+![image1](./Transfer.png)
+Tx: https://goerli.etherscan.io/tx/0x968a447fb842a9cac2a1da77d6aafe5611a8064e7c80c58a0aadc99d3cb040cb
+
 ## 4.前端运行
 ```sh
 cd vault-frontend
