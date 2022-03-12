@@ -13,9 +13,21 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
+const MY_KEY = "";
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
   solidity: "0.8.4",
+  networks: {
+    hardhat: {},
+    ganache: {
+      url: "http://localhost:8545",
+      accounts: [MY_KEY],
+    },
+    goerli: {
+      url: "https://eth-goerli.alchemyapi.io/v2/12UFIG5EnjVSP5Oha1Z3JBSZzvvoV9Zs",
+      accounts: [MY_KEY],
+    },
+  },
 };

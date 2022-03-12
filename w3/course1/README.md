@@ -8,7 +8,6 @@
 cd erc20-project
 npx hardhat run script/run.js
 ```
-
 ![image1](./本地运行.png)
 
 
@@ -17,5 +16,34 @@ npx hardhat run script/run.js
 npx hardhat run scripts/deploy.js --network goerli
 ```
 Owner: 0x71498272759319b26245Bc221cB618b679C043C8
+![image1](./部署合约.png)
+MyERC20: https://goerli.etherscan.io/address/0xcC0eD986CC2493D184493cEc1c8Dc715F771CeA2
 
-https://goerli.etherscan.io/address/0xB5690568a40B2EfF33Ede02210e27C13E365de12
+Vault: https://goerli.etherscan.io/address/0xCa300840d852d900D4D0Bba29D5B2f8FD3945b73
+
+## 4.前端运行
+```sh
+cd vault-frontend
+yarn start
+```
+
+### 4.1 初始界面
+![image1](./初始界面.png)
+
+### 4.2 连接钱包
+![image1](./链接钱包.png)
+
+### 4.3 Mint 50000个Token
+![image1](./Mint.png)
+
+### 4.4 Approve 50000个额度
+![image1](./Approve.png)
+
+### 4.5 存入30000个
+![image1](./Deposit.png)
+
+### 4.6 提取20000个
+![image1](./Withdraw.png)
+
+### 4.7 流水截图
+![image1](./Tx.png)
