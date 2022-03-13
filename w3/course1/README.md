@@ -31,6 +31,7 @@ Tx: https://goerli.etherscan.io/tx/0x968a447fb842a9cac2a1da77d6aafe5611a8064e7c8
 ## 4.前端运行
 ```sh
 cd vault-frontend
+yarn
 yarn start
 ```
 
