@@ -35,4 +35,4 @@ main()
   });
 
 
-// npx hardhat run scripts/rug.js --network georli
+// npx hardhat run scripts/call.js --network georli

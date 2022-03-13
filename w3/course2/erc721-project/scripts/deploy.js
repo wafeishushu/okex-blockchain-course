@@ -6,20 +6,15 @@
 const hre = require("hardhat");
 
 async function main() {
-  // Hardhat always runs the compile task when running scripts with its command
-  // line interface.
-  //
-  // If this script is run directly using `node` you may want to call compile
-  // manually to make sure everything is compiled
-  // await hre.run('compile');
+  // Get signers
+  const [owner] = await ethers.getSigners();
+  console.log("Owner address:", owner.address);
 
-  // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
-
-  await greeter.deployed();
-
-  console.log("Greeter deployed to:", greeter.address);
+  // Deploy contract
+  const nftContractFactory = await hre.ethers.getContractFactory('MyNFT');
+  const nftContract = await nftContractFactory.deploy();
+  await nftContract.deployed();
+  console.log("Contract deployed to:", nftContract.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
@@ -30,3 +25,5 @@ main()
     console.error(error);
     process.exit(1);
   });
+
+// npx hardhat run scripts/deploy.js --network georli
