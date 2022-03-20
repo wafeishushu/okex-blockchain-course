@@ -18,9 +18,24 @@ npx hardhat run scripts/deploy-router-weth.js --network ganache
 ```
 ![image1](./部署Router和WETH.png)
 
-### 1.3本地部署Token和MyTokenMarket并运行
+### 1.3部署SushiToken和MasterChef
 ```sh
 cd my-token-market-project/
+npx hardhat run scripts/deploy-sushi-masterchef.js --network ganache 
+```
+![image1](./部署MasterChef和SushiToken.png)
+
+### 1.4部署Token和Market
+```sh
+npx hardhat run scripts/deploy-token-market.js --network ganache 
+```
+![image1](./部署Token和Market.png)
+
+### 1.5运行
+```sh
 npx hardhat run scripts/run.js --network ganache 
 ```
-![image1](./本地部署运行MyTokenMarket.png)
+![image1](./本地运行.png)
+
+
+由于测试币不足。。而且本地调试也花了好长的时间，所以只在Ganache做了。。。。。。。。
