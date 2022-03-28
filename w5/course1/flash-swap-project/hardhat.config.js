@@ -25,10 +25,10 @@ module.exports = {
       url: "http://127.0.0.1:8545",
       chainId: 1337,
     },
-    // goerli: {
-    //   url:
-    //     "https://eth-goerli.alchemyapi.io/v2/12UFIG5EnjVSP5Oha1Z3JBSZzvvoV9Zs",
-    //   accounts: [MY_KEY],
-    // },
+    goerli: {
+      url:
+        "https://eth-goerli.alchemyapi.io/v2/12UFIG5EnjVSP5Oha1Z3JBSZzvvoV9Zs",
+      accounts: [MY_KEY],
+    },
   },
 };

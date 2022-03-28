@@ -8,7 +8,7 @@ async function main() {
   const MyTokenB = await ethers.getContractFactory("MyTokenB");
   const myTokenB = await MyTokenB.deploy();
   await myTokenB.deployed();
-  console.log("Token address", myTokenB.address);
+  console.log("TokenB address", myTokenB.address);
 
   await writeAddr(myTokenB.address, "MyTokenB", network.name);
 }
